@@ -11,7 +11,7 @@ nav {
         position: relative;
     }
     a {
-        font: 400 15px 'Open Sans', sans-serif;
+        font: 400 15px "Open Sans", sans-serif;
         color: #fffefe;
         font-size: 15px;
         font-weight: 400;
@@ -64,7 +64,6 @@ nav {
 }
 // Main Navigation -- End
 
-
 // Header -- Start
 header {
     background-color: #eeeff1;
@@ -83,7 +82,7 @@ header {
         &__item {
             display: inline-flex;
             align-items: center;
-            font: 300 15px 'Open Sans', sans-serif;
+            font: 300 15px "Open Sans", sans-serif;
             color: #000000;
             letter-spacing: 0.75px;
             margin-left: 55px;
@@ -103,5 +102,59 @@ header {
         }
     }
 }
-
 // Header -- End
+
+// Banner at the top page -- Start
+.index-banner {
+    background-color: #eeeff1;
+    padding-top: 130px;
+    padding-bottom: 75px;
+    position: relative;
+    &__background {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+    }
+    &__content {
+        width: 520px;
+        float: left;
+        text-align: left;
+        color: #000000;
+    }
+    &__title {
+        font: bold 42px/48px 'MetaPro', "Open Sans", sans-serif;
+    }
+    &__subtitle {
+        font: 400 15px/26px "Open Sans", sans-serif;
+        margin-top: 45px;
+        display: inline-block;
+        position: relative;
+    }
+    .btn-container {
+        margin-top: 56px;
+        .btn-default {
+            margin-right: 40px;
+        }
+    }
+    &__scroll-icon {
+        width: 40px;
+        text-align: center;
+        margin: 65px auto 0;
+        img {
+            animation: slide-mouse .8s infinite linear alternate;
+        }
+        p {
+            font: 400 9px "Roboto", sans-serif;
+            color: #5f6061;
+            text-align: center;
+            // color: #babcbe;
+        }
+    }
+}
+@keyframes slide-mouse {
+    from { transform: translateY(-5px); }
+    50%  { transform: translateY(-2px); }
+    to   { transform: translateY(1px);  }
+}
+// Banner at the top page -- End

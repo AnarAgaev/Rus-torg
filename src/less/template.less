@@ -1,9 +1,84 @@
 // INCLUDING FONTS
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&subset=cyrillic');
 
+@font-face {
+  font-family: 'MetaPro';
+  src: url('MetaPro-Bold.eot');
+  src: url('MetaPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('MetaPro-Bold.svg#MetaPro-Bold') format('svg'),
+       url('MetaPro-Bold.ttf') format('truetype'),
+       url('MetaPro-Bold.woff') format('woff'),
+       url('MetaPro-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+}
 .container {
     width: 1260px;
     padding: 0 15px;
     margin: 0 auto;
     position: relative;
 }
+
+.clearfix {
+    &::before,
+    &::after {
+        content: '';
+        display: table;
+        width: 100%;
+        clear: both;
+    }
+}
+
+// Default buttons -- Statr
+.btn-default {
+    box-shadow: 3px 3px 8px rgba(255, 93, 83, 0.35);
+    border-radius: 999px;
+    background-color: #ee4d43;
+    padding: 0 38px 0 37px;
+    height: 55px;
+    font: 700 15px/55px "Open Sans", sans-serif;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+    @media (min-width: 1200px) {
+        &:hover {
+            background-color: #c20c13;
+            color: #ffffff;
+        }
+    }
+}
+.btn-default-emty {
+    box-shadow: 3px 3px 8px rgba(255, 93, 83, 0.35);
+    border-radius: 999px;
+    background-color: transparent;
+    padding: 0 38px 0 37px;
+    height: 55px;
+    font: 700 15px/55px "Open Sans", sans-serif;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+
+    &.dark-castom {
+        border: 1px solid #ee4d43;
+        color: #ee4d43;
+    }
+    &.lite-castom {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+    }
+
+    @media (min-width: 1200px) {
+        &:hover {
+            background-color: #c20c13;
+            color: #ffffff;
+        }
+    }
+}
+// Default buttons -- End

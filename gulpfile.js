@@ -62,6 +62,12 @@ gulp.task('imagemin', function () {
         .pipe(browserSync.stream())
 })
 
+gulp.task('fonts', function () {
+    return gulp.src('src/fonts/**/*')
+        .pipe(gulp.dest('web/fonts'))
+        .pipe(browserSync.stream())
+})
+
 gulp.task('serve', function () {
     browserSync.init({
         server: {
@@ -73,6 +79,7 @@ gulp.task('serve', function () {
     gulp.watch('src/*.html', ['html'])
     gulp.watch('src/js/**/*.js', ['js'])
     gulp.watch('src/img/**/*', ['imagemin'])
+    gulp.watch('src/fonts/**/*', ['fonts'])
 })
 
-gulp.task('default', ['less', 'resetcss', 'html', 'js', 'imagemin', 'serve'])
+gulp.task('default', ['less', 'resetcss', 'html', 'js', 'imagemin', 'fonts', 'serve'])
