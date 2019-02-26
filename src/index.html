@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="ru">
 <head>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
@@ -23,37 +23,201 @@
     <![endif]-->
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Logo</a>
-        <nav>
-            <ul>
-                <li>Your menu</li>
+    <nav>
+        <div class="container">
+            <ul class="nav__items">
+                <li class="nav__item"><a href="#">О компании</a></li>
+                <li class="nav__item"><a href="#">Шины и диски</a></li>
+                <li class="nav__item"><a href="#">Сырье для производства</a></li>
+                <li class="nav__item"><a href="#">Товары с росрезерва</a></li>
+                <li class="nav__item"><a href="#">Контакты</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <a href="#" class="header_logo"><img src="" alt="Русторг"></a>
+            <ul class="header-contacts">
+                <li class="header-contacts__item operation-mode">
+                    <img src="" alt="" class="item-icon">
+                    пн-пт: c 9:00 — 17:00
+                </li>
+                <li class="header-contacts__item mail-to">
+                    <img src="" alt="" class="item-icon">
+                    <a href="mailto:opt@rus-t.ru">opt@rus-t.ru</a>
+                </li>
+                <li class="header-contacts__item addres">
+                    <img src="" alt="" class="item-icon">
+                     ул. Промышленная, 2
+                </li>
+                <li class="header-contacts__item phone">
+                    <img src="" alt="" class="item-icon">
+                    +7 (961) 461-41-45
+                </li>
+            </ul>
+        </div>
     </header>
-    <h1>Title of the page</h1>
-    <section>
-        <article>
-            <header>
-                <h2>Article title</h2>
-                <p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
-            </header>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </article>
-        <article>
-            <header>
-                <h2>Article title</h2>
-                <p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
-            </header>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </article>
+    <section class="index-banner">
+        <div class="container">
+            <img src="" class="index-banner__background" alt="">
+            <h1 class="index-banner__title">Оптовая и розничная  продажа автошин и дисков</h1>
+            <p class="index-banner__subtitle">Грузовых, легковых, легкогрузовых, сельхозшин и шин для спецтехники, продажа автошин и другой продукции с госрезерва, а также комплексные поставки промышленной химии, каучуков, техуглерода.</p>
+            <div class="btn-container">
+                <a href="" class="btn-default">Подробнее</a>
+                <a href="" class="btn-default-emty">Коммерческое предложение</a>
+            </div>
+            <div class="index-banner__scroll-icon">
+                <img src="" alt="">
+                <p>Скрольте вниз</p>
+            </div>
+        </div>
     </section>
-    <aside>
-        <h2>About section</h2>
-        <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-    </aside>
+    <section class="tires-and-wheels">
+        <div class="container">
+            <ul class="tires-and-wheels__items">
+                <li class="tires-and-wheels__item passive">
+                    <span class="tires-and-wheels__item-mark"></span>
+                    <img src="" alt="">
+                </li>
+                <li class="tires-and-wheels__item active">
+                    <img src="" alt="">
+                </li>
+                <li class="tires-and-wheels__item front">
+                    <h3 class="tires-and-wheels__item-title">Шины и диски для автобусов</h3>
+                    <p class="tires-and-wheels__item-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах.</p>
+                    <a href="" class="btn-default">Скачать прайс</a>
+                </li>
+                <li class="tires-and-wheels__item passive">
+                    <span class="tires-and-wheels__item-mark"></span>
+                    <img src="" alt="">
+                </li>
+                <li class="tires-and-wheels__item passive">
+                    <span class="tires-and-wheels__item-mark"></span>
+                    <img src="" alt="">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="posts">
+        <div class="container">
+            <img src="" alt="" class="posts-background">
+            <div class="posts-content">
+                <h3 class="posts-content__title"></h3>
+                <ul class="posts-content__descriptin">
+                    <li>Ремонт шин и дисков любой сложности</li>
+                    <li>Комфортное ожидание</li>
+                </ul>
+                <a href="">Подробнее<img src="" alt="Подробнее" class="anchor"></a>
+            </div>
+        </div>
+    </section>
+    <section class="material">
+        <h2 class="section-title material-title">Сырье для производства шин,  РТИ и лакокрасочной продукции</h2>
+        <ul class="material__items">
+            <li class="material__item">
+                <img src="material__icon" alt="Каучуки">
+                <h3 class="material__title">Каучуки</h3>
+                <p class="material__description">Используются в производстве резины.</p>
+                <ul class="material__description-list">
+                    <li>Натуральные</li>
+                    <li>Синтетические</li>
+                    <li>Специфицированные</li>
+                </ul>
+                <div class="material__button">
+                    <button href="#" class="button">Подробнее</button>
+                </div>
+            </li>
+            <li class="material__item">
+                <img src="material__icon" alt="Технический  углерод">
+                <h3 class="material__title">Технический  углерод</h3>
+                <p class="material__description">Без использования технического углерода шина легкового автомобиля сможет проехать не более 100 км. Шина в составе которой присутствует технический углерод может обогнуть земной шар более 5 раз!</p>
+                <div class="material__button">
+                    <button href="#" class="button">Подробнее</button>
+                </div>
+            </li>
+            <li class="material__item">
+                <img src="material__icon" alt="Химическое  сырье">
+                <h3 class="material__title">Химическое  сырье</h3>
+                <p class="material__description">Мы предлагаем поставки натуральных и синтетических каучуков и латексов, химикатов-добавок, мягчителей и пластификаторов, технического углерода зарубежного производства.</p>
+                <div class="material__button">
+                    <button href="#" class="button">Подробнее</button>
+                </div>
+            </li>
+        </ul>
+        <div class="material__arr-left">
+            <img src="" alt="Слайд в лево">
+        </div>
+        <div class="material__arr-right">
+            <img src="" alt="Слайд в право">
+        </div>
+    </section>
+    <section class="consultation">
+        <div class="container">
+            <img src="" class="consultation__background" alt="Получите консультацию специалиста по телефону">
+            <div class="consultation__description">
+                <h3 class="consultation__title">Получите консультацию специалиста по телефону</h3>
+                <p class="consultation__phone">+7 (961) 461-41-45</p>
+                <div class="consultation__button-container">
+                    <button type="button" name="button" class="btn-default-empty">Обратная связь</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reserve">
+        <h2 class="section-title reserve-title">Товары с росрезерва</h2>
+        <div class="reserve-slider">
+
+        </div>
+        <div class="reserve__btn-container">
+            <a href="" class="btn-default">Скачать прайс</a>
+        </div>
+    </section>
+    <section class="location">
+        <div class="container">
+            <div class="contacts">
+                <h3 class="contacts__title">Контакты</h3>
+                <ul class="contacts__description">
+                    <li class="contacts__description-itemm">
+                        <span class="contacts__title">Адрес:</span>
+                        <p class="contacts__text">г.Ярославль,</p>
+                        <p class="contacts__text">ул.Промышленная, д.2</p>
+                    </li>
+                    <li class="contacts__description-itemm">
+                        <span class="contacts__title">График работы:</span>
+                        <p class="contacts__text">С 9.00 — 17.00</p>
+                    </li>
+                    <li class="contacts__description-itemm">
+                        <span class="contacts__title">Телефоны:</span>
+                        <p class="contacts__text">Тел.: +7 (4852) 59-35-29, 59-36-28</p>
+                    </li>
+                    <li class="contacts__description-itemm">
+                        <span class="contacts__title">Email и соц сети:</span>
+                        <p class="contacts__text">e-mail: opt@rus-t.ru</p>
+                    </li>
+                </ul>
+                <ul class="social">
+                    <li class="social-item telegram">
+                        <img src="" alt="Наш телеграм канал">
+                    </li>
+                    <li class="social-item facebook">
+                        <img src="" alt="Наш феёсбук">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <footer>
-        <p>Copyright 2009 Your name</p>
+        <div class="container">
+            <a href="footer-logo">
+                <img src="" alt="">
+            </a>
+            <ul class="footer-links">
+                <li class="footer-links__item">О компании</li>
+                <li class="footer-links__item">Сырье для производства</li>
+                <li class="footer-links__item">Шины и диски</li>
+                <li class="footer-links__item">Товары с росрезерва</li>
+            </ul>
+        </div>
     </footer>
 
     <!-- CONNECTING JS SCRIPTS -->
