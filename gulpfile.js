@@ -12,6 +12,7 @@ const browserSync = require('browser-sync').create()
 // GULP TASKS
 gulp.task('less', function () {
     return gulp.src([
+      'src/less/template.less',
       'src/less/main.less',
       'src/less/media.less'
     ])
