@@ -44,9 +44,6 @@ gulp.task('resetcss', function () {
 
 gulp.task('html', function () {
     return gulp.src('src/*.html')
-        .pipe(sourcemaps.init())
-        .pipe(cleanhtml())
-        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('web'))
         .pipe(browserSync.stream())
 })
