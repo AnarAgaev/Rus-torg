@@ -1,13 +1,15 @@
 // CONNECTING GULP MODULES
-const gulp = require('gulp')
-const less = require('gulp-less')
-const concat = require('gulp-concat')
-const sourcemaps = require('gulp-sourcemaps')
-const autoprefixer = require('gulp-autoprefixer')
-const cleanCss = require('gulp-clean-css')
-const cleanhtml = require('gulp-cleanhtml')
-const imagemin = require('gulp-imagemin')
-const browserSync = require('browser-sync').create()
+const gulp          = require('gulp')
+const less          = require('gulp-less')
+const concat        = require('gulp-concat')
+const sourcemaps    = require('gulp-sourcemaps')
+const autoprefixer  = require('gulp-autoprefixer')
+const cleanCss      = require('gulp-clean-css')
+const cleanhtml     = require('gulp-cleanhtml')
+const imagemin      = require('gulp-imagemin')
+const browserSync   = require('browser-sync').create()
+const plumber       = require('gulp-plumber')
+const notify        = require('gulp-notify')
 
 // GULP TASKS
 gulp.task('less', function () {
@@ -16,6 +18,14 @@ gulp.task('less', function () {
       'src/less/main.less',
       'src/less/media.less'
     ])
+        .pipe(plumber({
+            errorHandler: notify.onError( function(err){
+                return {
+                    title: 'Styles',
+                    message: err.message
+                }
+            })
+        }))
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(concat('style.css'))
@@ -25,6 +35,7 @@ gulp.task('less', function () {
         }))
         .pipe(cleanCss())
         .pipe(sourcemaps.write('../maps'))
+        .pipe(plumber.stop())
         .pipe(gulp.dest('web/style'))
         .pipe(browserSync.stream())
 })
@@ -68,7 +79,7 @@ gulp.task('fonts', function () {
         .pipe(browserSync.stream())
 })
 
-gulp.task('serve', function () {
+gulp.task('serve', ['less', 'resetcss', 'html', 'js', 'imagemin', 'fonts'], function () {
     browserSync.init({
         server: {
             baseDir: './web'
@@ -82,4 +93,5 @@ gulp.task('serve', function () {
     gulp.watch('src/fonts/**/*', ['fonts'])
 })
 
-gulp.task('default', ['less', 'resetcss', 'html', 'js', 'imagemin', 'fonts', 'serve'])
+// DEFAULT TASK
+gulp.task('default', ['serve'])
