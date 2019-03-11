@@ -123,7 +123,7 @@ header {
         color: #000000;
     }
     &__title {
-        font: bold 42px/48px 'MetaPro', "Open Sans", sans-serif;
+        font: bold 42px/48px 'MetaPro', sans-serif;
     }
     &__subtitle {
         font: 400 15px/26px "Open Sans", sans-serif;
@@ -158,3 +158,226 @@ header {
     to   { transform: translateY(1px);  }
 }
 // Banner at the top page -- End
+
+// Section Tires and wheels -- Start
+.tires-and-wheels {
+    .tires-and-wheels__items {
+        height: 375px;
+        position: relative;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        display: flex;
+        align-items: center;
+    }
+    .tractor {
+        width: 341px;
+        height: 260px;
+        position: absolute;
+        right: 80px;
+        z-index: 2;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .track {
+        left: 0;
+        z-index: 1;
+        width: 341px;
+        height: 260px;
+        position: absolute;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .bus {
+        width: 438px;
+        height: 334px;
+        position: absolute;
+        left: 285px;
+        z-index: 2;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .front {
+        width: 275px;
+        height: 377px;
+        background-color: #ee4d43;
+        position: absolute;
+        left: 671px;
+        z-index: 3;
+        &::before,
+        &::after {
+            display: none;
+        }
+        .btn-default-emty {
+            margin-left: 28px;
+        }
+    }
+    .combine {
+        width: 251px;
+        height: 192px;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .tires-and-wheels__item-mark {
+        background-color: #babcbe;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: #fffefe;
+        font-family: 'MetaPro', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: absolute;
+    }
+    .tractor .tires-and-wheels__item-mark {
+        width: 260px;
+        height: 65px;
+        right: 0;
+        font-size: 21px;
+        transform: rotate(-90deg) translateY(98px) translateX(-97px);
+    }
+    .track .tires-and-wheels__item-mark {
+        width: 260px;
+        height: 65px;
+        left: 0;
+        font-size: 24px;
+        transform: rotate(-90deg) translateY(-97px) translateX(-97px);
+    }
+    .combine .tires-and-wheels__item-mark {
+        right: 0;
+        width: 192px;
+        height: 49px;
+        background-color: #d0d0d0;
+        font-size: 16px;
+        transform: rotate(-90deg) translateY(97px) translateX(-71px);
+    }
+    .tires-and-wheels__item-title {
+        color: #fffefe;
+        font-family: 'MetaPro', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 21px;
+        padding-bottom: 20px;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 58px;
+            height: 2px;
+            background-color: #ffffff;
+            bottom: 0;
+            left: 28px;
+        }
+    }
+    .tires-and-wheels__item-subtitle {
+        color: #fffefe;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 21px;
+        text-align: left;
+        padding: 20px 45px 34px 28px;
+    }
+}
+// Section Tires and wheels -- End
+
+// Section Posts -- Start
+.posts {
+    height: 214px;
+    background-image: linear-gradient(to left, #efefef 0%, #d0d0d0 100%);
+    .container {
+        min-height: 214px;
+    }
+    &-background {
+        position: absolute;
+        left: 95px;
+        bottom: 3px;
+    }
+    &-content {
+        left: 50%;
+        position: absolute;
+    }
+    &-content__title {
+        color: #000000;
+        font-family: 'MetaPro', sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        margin-top: 30px;
+    }
+
+    &-content__descriptin {
+        margin: 12px 0;
+    }
+    &-content__descriptin li {
+        color: #000000;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 21px;
+        position: relative;
+        padding-left: 10px;
+        margin-left: 35px;
+        &::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: #000000;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .base-anchor {
+        margin-left: 35px;
+    }
+}
+// Section Posts -- End
+
+// Section material -- Start
+.material {
+    padding: 80px 0;
+    &-title {
+        color: #000000;
+        font-family: 'MetaPro', sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        text-align: center;
+        max-width: 650px;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+    .material__item {
+        display: block;
+        &_passive {
+            background-color: #babcbe;
+            padding: 22px 30px 24px;
+            width: 315px;
+        }
+        &_active {
+            width: 380px;
+            box-shadow: 3px 3px 8px rgba(238, 77, 67, 0.25);
+            background-color: #ee4d43;
+            padding: 30px;
+        }
+    }
+}
+// Section material -- End
