@@ -536,3 +536,81 @@ header {
     }
 }
 // Section material -- End
+
+// Section consultation -- Start
+.consultation {
+    background-color: #ee4d43;
+    background-image: linear-gradient(to left, #ff8982 0%, #ee4d43 100%);
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 126px;
+        position: relative;
+        padding-left: 185px;
+    }
+    &__back {
+        margin-right: 62px;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+    }
+    &__description {
+        text-align: center;
+        color: #ffffff;
+        font-weight: 700;
+        margin-right: 64px;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &__title {
+        font-size: 28px;
+        font-family: 'MetaPro', sans-serif;
+        line-height: 1.5;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &__phone {
+        font-size: 42px;
+        font-family: "Open Sans", sans-serif;
+        line-height: 1;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &__button-container .btn-default-emty {
+        padding-left: 27px;
+        &::before,
+        &::after {
+            display: none;
+        }
+        img {
+            margin-right: 15px;
+        }
+    }
+}
+// Section consultation -- End
+
+
+
+
+// Footer -- Start
+footer {
+    background-color: #606060;
+    &::before,
+    &::after {
+        display: none;
+    }
+
+
+}
+
+
+
+// Footer -- End
