@@ -597,20 +597,121 @@ header {
 }
 // Section consultation -- End
 
-
-
+// Section location -- Start
+.location {
+    position: relative;
+    background-color: #eeeff1;
+    height: 637px;
+    .img-map-wrap {
+        width: 1366px;
+        height: 637px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .baloone {
+        position: absolute;
+        top: 288px;
+        left: 50%;
+        margin-left: 150px;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    .contacts {
+        width: 398px;
+        height: 479px;
+        box-shadow: 3px 3px 8px rgba(173, 173, 173, 0.35);
+        background-color: #ffffff;
+        margin-top: 74px;
+        padding: 30px 38px 0;
+        text-align: left;
+        h3 {
+            font-family: 'MetaPro', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #000000;
+            padding-bottom: 17px;
+        }
+        &__description {
+            color: #010101;
+            font-family: "Open Sans", sans-serif;
+            line-height: 21px;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        &__description-item {
+            padding-bottom: 20px;
+        }
+        &__title {
+            font-weight: 700;
+        }
+        .mailto-anchor {
+            color: #ee4d43;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .social {
+            display: flex;
+            margin-top: 9px;
+            a {
+                margin-right: -45px;
+            }
+        }
+    }
+}
+// Section location -- End
 
 // Footer -- Start
-footer {
+.footer {
     background-color: #606060;
     &::before,
     &::after {
         display: none;
     }
-
-
+    .container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-top: 70px;
+        padding-bottom: 35px;
+    }
+    &__logo {
+        margin-right: 57px;
+        display: inline-block;
+    }
+    &-links {
+        display: flex;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &-links__section {
+        margin-right: 63px;
+        display: flex;
+        flex-direction: column;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 13px;
+            display: inline-block;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
-
-
-
 // Footer -- End
