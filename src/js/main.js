@@ -25,7 +25,7 @@ $( document ).ready(function() {
 // FUNCTION FOR HIDE MATERIAL CARD
 function hideMaterialCard() {
     $('.material-slider').removeClass('visible')
-    $('.material-slider__container').removeClass('active')
+    $('.material-slider__container').css('marginTop','0').removeClass('active')
 }
 
 
@@ -38,19 +38,16 @@ function slideMaterialCard(tooSide) {
     // Changed number of active card
     switch (tooSide) {
         case 'left':
-            if (activeCard == 0) activeCard = numCards - 1
+            if (activeCard == 0) activeCard = --numCards
             else activeCard--
             break
         case 'right':
-            if (activeCard == numCards - 1) activeCard = 0
+            if (activeCard == --numCards) activeCard = 0
             else activeCard++
             break
     }
 
-
-    console.log(activeCard);
-
-
-    $('.material-slider__container.active').hide(0).removeClass('active')
-    cards.eq(activeCard).addClass('active')
+    // Moove active card to the front and hide not active cards
+    $('.material-slider__container.active').css('marginTop','-100%').removeClass('active')
+    cards.eq(activeCard).css('marginTop','0').addClass('active')
 }
