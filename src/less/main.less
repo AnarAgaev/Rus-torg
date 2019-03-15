@@ -716,3 +716,120 @@ header {
     }
 }
 // Footer -- End
+
+// Material slider -- Start
+.material-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.47);
+    position: fixed;
+    z-index: 999;
+    &__container {
+        width: 1366px;
+        min-height: 766px;
+        padding-top: 70px;
+        padding-left: 139px;
+        padding-bottom: 90px;
+        background-color: #eeeff1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-bottom: 5px solid #f76d65;
+    }
+    &__close {
+        display: block;
+        position: absolute;
+        top: 89px;
+        right: 61px;
+        color: #ff8881;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: underline;
+        letter-spacing: 1.5px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__back-img {
+        position: absolute;
+        display: block;
+        top: 178px;
+        right: 85px;
+    }
+    &__content {
+        width: 630px;
+    }
+    &__title {
+        font-family: 'MetaPro', sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: #000000;
+        line-height: 1.2;
+    }
+    &__subtitle {
+        font-family: "Open Sans", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #000000;
+        display: block;
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__num-card {
+        color: #ff8881;
+        font-family: "Open Sans", sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        display: block;
+        position: absolute;
+        left: -72px;
+        top: -7px;
+    }
+    &__description {
+        color: #000000;
+        font-family: "Open Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.27;
+        padding-right: 100px;
+    }
+    &__controls {
+        margin-top: 40px;
+        display: flex;
+    }
+    &__control {
+        width: 57px;
+        height: 57px;
+        background-color: #ee4e44;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-right: 25px;
+        position: relative;
+        transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0px 0px 0px 0px rgba(238,78,68,0.33);
+        &:hover {
+            box-shadow: 0px 0px 0px 7px rgba(238,78,68,0.33);
+        }
+        img {
+            display: block;
+            position: absolute;
+            top: 19px;
+        }
+        .left-arr { left: 20px; }
+        .right-arr { left: 24px; }
+    }
+    &__bottom-img {
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 70px;
+    }
+}
+// Material slider -- End
