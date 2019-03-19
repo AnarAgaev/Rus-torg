@@ -17,6 +17,9 @@
 body {
     overflow-x: hidden;
 }
+body.modal-open {
+    overflow: hidden;
+}
 .container {
     width: 1260px;
     padding: 0 15px;
@@ -137,5 +140,10 @@ body {
     50%  { transform: translateX(0px); }
     to   { transform: translateX(3px);  }
 }
-
 // Anchors -- End
+
+.anchor-target {
+    position: absolute;
+    top: -57px;
+    display: block;
+}

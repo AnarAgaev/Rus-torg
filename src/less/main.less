@@ -1,72 +1,77 @@
 // Main Navigation -- Start
 nav {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
     background-color: #ee4d43;
     background-image: linear-gradient(to left, #ff8982 0%, #ee4d43 100%);
     .nav__items {
-    height: 57px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .nav__item {
-        position: relative;
-    }
-    a {
-        font: 400 15px "Open Sans", sans-serif;
-        color: #fffefe;
-        font-size: 15px;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        text-decoration: none;
-        float: left;
-        margin-right: 100px;
-        &.active + .line::before {
-            background-color: #c32026;
+        height: 57px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .nav__item {
+            position: relative;
         }
-        @media (min-width: 1200px) {
-            &:hover + .line {
-                transform: translateX(-6px);
+        a {
+            font: 400 15px "Open Sans", sans-serif;
+            color: #fffefe;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.75px;
+            text-decoration: none;
+            float: left;
+            margin-right: 109px;
+            cursor: pointer;
+            &.active + .line::before {
+                background-color: #c32026;
+            }
+            @media (min-width: 1200px) {
+                &:hover + .line {
+                    transform: translateX(-6px);
+                    width: 6px;
+                    right: 90px;
+                }
+            }
+        }
+        .line {
+            width: 82px;
+            height: 1px;
+            background-color: #eeeff1;
+            display: inline-block;
+            position: absolute;
+            right: 16px;
+            top: 11px;
+            transition: all .3s;
+            &::before,
+            &::after {
+                content: '';
                 width: 6px;
-                right: 80px;
+                height: 6px;
+                background-color: #eeeff1;
+                display: block;
+                position: absolute;
+                border: 1px solid #eeeff1;
+                border-radius: 50%;
+                top: -2px;
+            }
+            &::before {
+                left: 0;
+                z-index: 1;
+            }
+            &::after {
+                right: 0;
+                z-index: 0;
             }
         }
     }
-    .line {
-        width: 70px;
-        height: 1px;
-        background-color: #eeeff1;
-        display: inline-block;
-        position: absolute;
-        right: 16px;
-        top: 11px;
-        transition: all .3s;
-        &::before,
-        &::after {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background-color: #eeeff1;
-            display: block;
-            position: absolute;
-            border: 1px solid #eeeff1;
-            border-radius: 50%;
-            top: -2px;
-        }
-        &::before {
-            left: 0;
-            z-index: 1;
-        }
-        &::after {
-            right: 0;
-            z-index: 0;
-        }
-    }
-}
 }
 // Main Navigation -- End
 
 // Header -- Start
 header {
     background-color: #eeeff1;
+    margin-top: 57px;
     .container {
         display: flex;
         justify-content: space-between;
@@ -161,6 +166,7 @@ header {
 
 // Section Tires and wheels -- Start
 .tires-and-wheels {
+    position: relative;
     .tires-and-wheels__items {
         height: 375px;
         position: relative;
@@ -853,6 +859,21 @@ header {
         position: absolute;
         bottom: -5px;
         left: 70px;
+    }
+    #about-company {
+        .material-slider__subtitle {
+            margin-top: 58px;
+            margin-bottom: 25px;
+        }
+        .material-slider__back-img {
+            top: 170px;
+        }
+    }
+    .colback {
+        margin-top: 13px;
+        .btn-default img {
+            margin-right: 15px;
+        }
     }
 }
 // Material slider -- End

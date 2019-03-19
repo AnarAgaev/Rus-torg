@@ -49,7 +49,6 @@
             </div>
             <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
-
         <div class="material-slider__container">
             <button type="button" class="material-slider__close">Вернуться</button>
             <img src="/images/synthetic-rubber.png" class="material-slider__back-img" alt="Натуральный каучук">
@@ -95,7 +94,6 @@
             </div>
             <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
-
         <div class="material-slider__container">
          <button type="button" class="material-slider__close">Вернуться</button>
          <img src="/images/chemistry.png" class="material-slider__back-img" alt="Натуральный каучук">
@@ -134,7 +132,6 @@
          </div>
          <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
-
         <div class="material-slider__container" id="carbon">
             <button type="button" class="material-slider__close">Вернуться</button>
             <img src="/images/carbon.png" class="material-slider__back-img" alt="Технический углерод">
@@ -166,7 +163,6 @@
             </div>
             <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
-
         <div class="material-slider__container" id="chemistry">
          <button type="button" class="material-slider__close">Вернуться</button>
          <img src="/images/chemistry.png" class="material-slider__back-img" alt="Промышленная химия">
@@ -205,29 +201,43 @@
          </div>
          <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
-
+        <div class="material-slider__container single-card" id="about-company">
+            <button type="button" class="material-slider__close">Вернуться</button>
+            <img src="/images/about-company.png" class="material-slider__back-img" alt="Натуральный каучук">
+            <div class="material-slider__content">
+                <h3 class="material-slider__title">О компании</h3>
+                <h4 class="material-slider__subtitle">Мы те кому можно доверять не один год</h4>
+                <div class="material-slider__description-wrap">
+                    <p class="material-slider__description">«РУСТОРГ» – одна из крупнейших российских компаний по производству шин и дисков. Более 17 лет мы помогаем нашим клиентам сокращать затраты и внедряем современные модели нашей продукции.
+                    <br><br>
+                    Мы реализовали тысячи серьезных проектов для российских и зарубежных компаний и знаем, что повышает эффективность, а что приводит к фиаско. Делиться знаниями — это наш вклад в развитие бизнеса наших партнеров.</p>
+                </div>
+                <div class="btn-container colback">
+                    <button type="button" name="button" class="btn-default">
+                        <img src="/images/btn-icon-phone.png" alt="">
+                        Обратная связь
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <nav>
         <ul class="nav__items">
             <li class="nav__item">
-                <a href="#" class="active">О компании</a>
+                <a href="#" class="active" data-card-id="about-company">О компании</a>
                 <span class="line"></span>
             </li>
             <li class="nav__item">
-                <a href="#">Шины и диски</a>
+                <a href="#" data-anchor-target="#tires-and-wheels">Шины и диски</a>
                 <span class="line"></span>
             </li>
             <li class="nav__item">
-                <a href="#">Сырье для производства</a>
+                <a href="#" data-anchor-target="#material">Сырье для производства</a>
                 <span class="line"></span>
             </li>
             <li class="nav__item">
-                <a href="#">Товары с росрезерва</a>
-                <span class="line"></span>
-            </li>
-            <li class="nav__item">
-                <a href="#">Контакты</a>
+                <a href="#" data-anchor-target="#location">Контакты</a>
                 <span class="line"></span>
             </li>
         </ul>
@@ -274,6 +284,7 @@
         </div>
     </section>
     <section class="tires-and-wheels">
+        <span class="anchor-target" id="tires-and-wheels"></span>
         <div class="container">
             <ul class="tires-and-wheels__items">
                 <li class="tires-and-wheels__item track">
@@ -313,6 +324,7 @@
         </div>
     </section>
     <section class="material">
+        <span class="anchor-target" id="material"></span>
         <h2 class="section-title material-title">Сырье для производства шин,  РТИ и лакокрасочной продукции</h2>
         <div class="container">
             <ul class="material__items">
@@ -370,6 +382,7 @@
         </div>
     </section>
     <section class="location">
+        <span class="anchor-target" id="location"></span>
         <div class="img-map-wrap">
             <img src="/images/map-cap.png" alt="">
             <div class="baloone">
