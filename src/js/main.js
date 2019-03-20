@@ -25,7 +25,7 @@ $( document ).ready(function() {
     })
 
     // Smooth scroll to the target on page when user click anchor in the main navegation
-    $('.nav__item [data-anchor-target]').on('click', function functionName(event) {
+    $('[data-anchor-target]').on('click', function functionName(event) {
         event.preventDefault()
         let anchorTargetId = $(this).data('anchor-target')
 
