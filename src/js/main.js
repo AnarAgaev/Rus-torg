@@ -17,6 +17,8 @@ $( document ).ready(function() {
         event.preventDefault()
         let cardId = $(this).data('card-id')
 
+        $('.nav__item a').not($(this)).removeClass('active')
+        $(this).addClass('active')
         $('.material-slider').addClass('visible')
         $('#' + cardId).addClass('active')
         $('body').addClass('modal-open')
@@ -27,6 +29,8 @@ $( document ).ready(function() {
         event.preventDefault()
         let anchorTargetId = $(this).data('anchor-target')
 
+        $('.nav__item a').not($(this)).removeClass('active')
+        $(this).addClass('active')
         if ( $(anchorTargetId).length != 0 ) {
     	    $('html, body').animate({ scrollTop: $(anchorTargetId).offset().top }, 500);
         }
@@ -34,6 +38,7 @@ $( document ).ready(function() {
 
     // Hide material card when user clickd button close
     $('.material-slider__close').on('click', function(){
+        $('a[data-card-id="about-company"]').removeClass('active')
         hideMaterialCard()
     })
 
