@@ -1,7 +1,9 @@
-$( document ).ready(function() {
+// Varible for controll multiple clicks
+var eventTimer = true
 
+$( document ).ready(function() {
     // Show material card when user clickd button Read more on the page
-    $('.material__button button').on('click', function(){
+    $(document).on( 'click', '.material__button button', function () {
         // ID of the displayed card
         let cardId = $(this).attr('data-card-id')
 
@@ -118,6 +120,7 @@ function materialSliding(slideTo) {
                 {left: positionLeft + 'px'},
                 300,
                 function(){
+                    // Manipulation with DOM elements
                     let activeElement = $('.material__item_active')
                     activeElement.addClass('material__item_passive').removeClass('material__item_active')
                     $('.material__item:last').prependTo(sliderContainer) // Cloning last element to the front
@@ -134,6 +137,7 @@ function materialSliding(slideTo) {
                 {left: positionLeft + 'px'},
                 300,
                 function(){
+                    // Manipulation with DOM elements
                     let activeElement = $('.material__item_active')
                     activeElement.addClass('material__item_passive').removeClass('material__item_active')
                     firstElement.remove() // Deleted first element
@@ -148,8 +152,20 @@ function materialSliding(slideTo) {
 
 // HANDLE CLICK ON TO THE LEFT OR TO THE RIGHT IN MATERIAL SLIDER
 $('.material__arr_left').on('click', function(){
-    materialSliding('left')
+    if(eventTimer) {
+        eventTimer = false
+        setTimeout(function() {
+            eventTimer = true
+        }, 500)
+        materialSliding('left')
+    }
 })
 $('.material__arr_right').on('click', function(){
-    materialSliding('right')
+    if(eventTimer) {
+        eventTimer = false
+        setTimeout(function() {
+            eventTimer = true
+        }, 500)
+        materialSliding('right')
+    }
 })
