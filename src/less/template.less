@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: 'MetaPro';
-  src: url('MetaPro-Bold.eot');
-  src: url('MetaPro-Bold.eot?#iefix') format('embedded-opentype'),
-       url('MetaPro-Bold.svg#MetaPro-Bold') format('svg'),
-       url('MetaPro-Bold.ttf') format('truetype'),
-       url('MetaPro-Bold.woff') format('woff'),
-       url('MetaPro-Bold.woff2') format('woff2');
+  src: url('/fonts/MetaPro-Bold/MetaPro-Bold.eot');
+  src: url('/fonts/MetaPro-Bold/MetaPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/MetaPro-Bold/MetaPro-Bold.svg#MetaPro-Bold') format('svg'),
+       url('/fonts/MetaPro-Bold/MetaPro-Bold.ttf') format('truetype'),
+       url('/fonts/MetaPro-Bold/MetaPro-Bold.woff') format('woff'),
+       url('/fonts/MetaPro-Bold/MetaPro-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
@@ -37,58 +37,123 @@ body.modal-open {
     }
 }
 
-// Default buttons -- Statr
+// Default buttons
 .btn-default {
     box-shadow: 3px 3px 8px rgba(255, 93, 83, 0.35);
     border-radius: 999px;
-    background-color: #ee4d43;
     padding: 0 38px 0 37px;
+    background-color: #ee4d43;
     height: 55px;
     font: 700 15px/55px "Open Sans", sans-serif;
     display: inline-block;
     color: white;
     cursor: pointer;
     text-decoration: none;
-    transition: all .3s;
+    position: relative;
+    span {
+        display: inline-block;
+        position: relative;
+        z-index: 30;
+    }
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        transition: all .3s;
+        opacity: 0;
+    }
+    &::before {
+        background-image: linear-gradient(to right, #e40f00 0%, #ee4d43 100%);
+        z-index: 5;
+    }
+    &::after {
+        background-color: #e40f00;
+        z-index: 10;
+    }
     @media (min-width: 1200px) {
-        &:hover {
-            background-color: #c20c13;
-            color: #ffffff;
+        &:hover::before{
+            opacity: 1;
+        }
+        &:active::after{
+            opacity: 1;
+        }
+    }
+}
+.btn-default-lite {
+    box-shadow: 3px 3px 8px rgba(255, 93, 83, 0.35);
+    border-radius: 999px;
+    padding: 0 38px 0 37px;
+    height: 55px;
+    font: 700 15px/55px "Open Sans", sans-serif;
+    display: inline-block;
+    color: #ee4d43;
+    border: 1px solid #ee4d43;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #eeeff1;
+    span {
+        display: inline-block;
+        position: relative;
+        z-index: 30;
+    }
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        transition: all .3s;
+        opacity: 0;
+    }
+    &::before {
+        background-image: linear-gradient(to right, #ffffff 0%, #eeeff1 100%);
+        z-index: 5;
+    }
+    &::after {
+        z-index: 10;
+        background-color: #ffffff;
+    }
+    @media (min-width: 1200px) {
+        &:hover::before{
+            opacity: 1;
+        }
+        &:active::after{
+            opacity: 1;
         }
     }
 }
 .btn-default-emty {
-    box-shadow: 3px 3px 8px rgba(255, 93, 83, 0.35);
     border-radius: 999px;
-    background-color: transparent;
+    border: 1px solid white;
     padding: 0 38px 0 37px;
+    background-color: transparent;
     height: 55px;
     font: 700 15px/55px "Open Sans", sans-serif;
     display: inline-block;
     color: white;
-    text-decoration: none;
-    transition: all .3s;
     cursor: pointer;
-    &.dark-castom {
-        border: 1px solid #ee4d43;
-        color: #ee4d43;
-    }
-    &.lite-castom {
-        border: 1px solid #ffffff;
-        color: #ffffff;
-    }
-
-    @media (min-width: 1200px) {
-        &:hover {
-            background-color: #c20c13;
-            color: #ffffff;
-            border-color: #c20c13;
-        }
+    text-decoration: none;
+    position: relative;
+    span {
+        display: inline-block;
+        position: relative;
+        z-index: 30;
     }
 }
-// Default buttons -- End
 
-// Anchors -- Start
+
+// Anchors
 .base-anchor {
     color: #ee4d43;
     font-family: "Open Sans", sans-serif;
@@ -140,10 +205,23 @@ body.modal-open {
     50%  { transform: translateX(0px); }
     to   { transform: translateX(3px);  }
 }
-// Anchors -- End
-
 .anchor-target {
     position: absolute;
-    top: -57px;
+    top: -55x;
     display: block;
 }
+
+/* placeholder styles for input and textarea */
+             input::placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+    input:-ms-input-placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+   input::-ms-input-placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+          textarea::placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+ textarea:-ms-input-placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+textarea::-ms-input-placeholder {color: #d5d5d5; opacity: 1; transition: opacity 0.3s ease; font-weight: 400;}
+/* Smooth disappearance of placeholder */
+             input:focus::placeholder {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+   input:focus::-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+          textarea:focus::placeholder {opacity: 0; transition: opacity 0.3s ease;}
+ textarea:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+textarea:focus::-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}

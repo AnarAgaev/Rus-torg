@@ -2,8 +2,29 @@
 var eventTimer = true
 
 $( document ).ready(function() {
+    // OPEN FEEDBACK MODAL
+    $('.open-feedback-modal').on('click', function(event) {
+        event.preventDefault()
+        $('.material-slider').removeClass('visible')
+        $('.material-slider__container').removeClass('active')
+        $('.feedback-form').addClass('visible')
+        $('.feedback-form__container').addClass('active')
+        $('body').addClass('modal-open')
+    })
+    // CLOSE FEEDBACK MODAL
+    function closeFeedbackModal() {
+        $('.feedback-form').removeClass('visible')
+        $('.feedback-form__container').removeClass('active')
+        $('body').removeClass('modal-open')
+    }
+    $('.feedback-form__close').on('click', function(event) {
+        event.preventDefault()
+        closeFeedbackModal()
+    })
+
     // Show material card when user clickd button Read more on the page
-    $(document).on( 'click', '.material__button button', function () {
+    $(document).on( 'click', '[data-card-id]', function (event) {
+        event.preventDefault()
         // ID of the displayed card
         let cardId = $(this).attr('data-card-id')
 
@@ -49,13 +70,15 @@ $( document ).ready(function() {
         slideMaterialCard(tooSide)
     })
 
-    // HIDE MATERIAL CARD WHEN USER CLICKD OUTSIDE BLOCK
+    // HIDE POPUP CARD WHEN USER CLICKD OUTSIDE BLOCK
 	$(document).on('mouseup', function(event) {
-		let targetBlock = $('.material-slider__container')
+		let targetBlockMaterial = $('.material-slider__container')
+        let targetBlockFeedack = $('.feedback-form__container')
 
-        if (!targetBlock.is(event.target)
-            && targetBlock.has(event.target).length === 0) {
-                hideMaterialCard()
+        if (!targetBlockMaterial.is(event.target) && targetBlockMaterial.has(event.target).length === 0
+         && !targetBlockFeedack.is(event.target) && targetBlockFeedack.has(event.target).length === 0) {
+             hideMaterialCard()
+             closeFeedbackModal()
         }
 	})
 })
@@ -71,7 +94,8 @@ function hideMaterialCard() {
 function slideMaterialCard(tooSide) {
     let activeCard = $('.material-slider__container.active').index()
     let cards = $('.material-slider__container:not(.single-card)')
-    let numCards = $('.material-slider__container:not(.single-card)').length
+    //let numCards = $('.material-slider__container:not(.single-card)').length
+    let numCards = 3
 
     // Changed number of active card
     switch (tooSide) {
@@ -120,27 +144,41 @@ function materialSliding(slideTo) {
 
     switch (slideTo) {
         case 'left':
+            // Manipulation with DOM elements
+            let activeElement = $('.material__item_active')
+            activeElement.clone().prependTo(sliderContainer)
+            lastElement.remove() // Deleted last element
+            $('.material__item_active').addClass('material__item_passive').removeClass('material__item_active')
+            $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
+            positionLeft -= STEP_WIDTH
+            sliderContainer.css('left', positionLeft + 'px')
             positionLeft += STEP_WIDTH
-            sliderContainer.animate(
-                {left: positionLeft + 'px'},
-                300,
-                function(){
-                    // Manipulation with DOM elements
-                    let activeElement = $('.material__item_active')
-                    activeElement.addClass('material__item_passive').removeClass('material__item_active')
-                    $('.material__item:last').prependTo(sliderContainer) // Cloning last element to the front
-                    lastElement.remove() // Deleted last element
-                    let numElements = $('.material__item').length - 2 // Number of the last but one element
-                    $('.material__item:eq(' + numElements + ')').clone().prependTo(sliderContainer) // Cloning last but one element to the front
-                    sliderContainer.css('left', '-' + STEP_WIDTH + 'px') // Moove slider container to the start position
-                    $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
-                })
+            sliderContainer.animate({left: positionLeft + 'px'}, 700, 'easeOutQuart')
+
+            // positionLeft += STEP_WIDTH
+            // sliderContainer.animate(
+            //     {left: positionLeft + 'px'},
+            //     500,
+            //     'expoout',
+            //     function(){
+            //         // Manipulation with DOM elements
+            //         let activeElement = $('.material__item_active')
+            //         activeElement.addClass('material__item_passive').removeClass('material__item_active')
+            //         $('.material__item:last').prependTo(sliderContainer) // Cloning last element to the front
+            //         lastElement.remove() // Deleted last element
+            //         let numElements = $('.material__item').length - 2 // Number of the last but one element
+            //         $('.material__item:eq(' + numElements + ')').clone().prependTo(sliderContainer) // Cloning last but one element to the front
+            //         sliderContainer.css('left', '-' + STEP_WIDTH + 'px') // Moove slider container to the start position
+            //         $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
+            //     })
+
             break
         case 'right':
             positionLeft -= STEP_WIDTH
             sliderContainer.animate(
                 {left: positionLeft + 'px'},
-                300,
+                500,
+                'expoout',
                 function(){
                     // Manipulation with DOM elements
                     let activeElement = $('.material__item_active')
@@ -161,7 +199,7 @@ $('.material__arr_left').on('click', function(){
         eventTimer = false
         setTimeout(function() {
             eventTimer = true
-        }, 500)
+        }, 1000)
         materialSliding('left')
     }
 })
@@ -170,7 +208,7 @@ $('.material__arr_right').on('click', function(){
         eventTimer = false
         setTimeout(function() {
             eventTimer = true
-        }, 500)
+        }, 1000)
         materialSliding('right')
     }
 })

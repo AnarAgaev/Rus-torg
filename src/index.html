@@ -20,7 +20,7 @@
     <![endif]-->
 </head>
 <body>
-    <!-- Material slider -- Start -->
+    <!-- Material slider -->
     <section class="material-slider">
         <div class="material-slider__container" id="rubbers">
             <button type="button" class="material-slider__close">Вернуться</button>
@@ -149,14 +149,6 @@
                         Пигментами называются продукты, придающие изделию цвет, при этом находящиеся в системе в твердой фазе (в виде частиц) и не вступающие в химические реакции с носителем.
                     </p>
                 </div>
-                <div class="material-slider__controls">
-                    <div class="material-slider__control" data-to-side="left">
-                        <img src="/images/ms-left-arr.png" class="left-arr" alt="Показать слайд слева">
-                    </div>
-                    <div class="material-slider__control" data-to-side="right">
-                        <img src="/images/ms-right-arr.png" class="right-arr" alt="Показать слайд справа">
-                    </div>
-                </div>
             </div>
             <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
@@ -187,14 +179,6 @@
                     редназначен для применения при производстве резиновых изделий как ускоритель вулканизации. Изготавливается для нужд народного хозяйства и для поставки на экспорт.
                  </p>
              </div>
-             <div class="material-slider__controls">
-                 <div class="material-slider__control" data-to-side="left">
-                     <img src="/images/ms-left-arr.png" class="left-arr" alt="Показать слайд слева">
-                 </div>
-                 <div class="material-slider__control" data-to-side="right">
-                     <img src="/images/ms-right-arr.png" class="right-arr" alt="Показать слайд справа">
-                 </div>
-             </div>
          </div>
          <img src="/images/ms-man.png" class="material-slider__bottom-img" alt="">
         </div>
@@ -210,15 +194,45 @@
                     Мы реализовали тысячи серьезных проектов для российских и зарубежных компаний и знаем, что повышает эффективность, а что приводит к фиаско. Делиться знаниями — это наш вклад в развитие бизнеса наших партнеров.</p>
                 </div>
                 <div class="btn-container colback">
-                    <button type="button" name="button" class="btn-default">
-                        <img src="/images/btn-icon-phone.png" alt="">
-                        Обратная связь
+                    <button type="button" name="button" class="btn-default open-feedback-modal">
+                        <span>
+                            <img src="/images/btn-icon-phone.png" alt="">
+                            Обратная связь
+                        </span>
                     </button>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Material slider -- End -->
+    <!-- Feedback form -->
+    <section class="feedback-form">
+        <div class="feedback-form__container">
+            <div type="button" class="feedback-form__close"></div>
+            <h3 class="feedback-form__title">Обратная связь</h3>
+            <h4 class="feedback-form__subtitle">Мы ответим вам в течении <span class="accent">24 часов</span></h4>
+            <form class="feedback-form__form" action="javascript:void(0);" method="post" enctype="multipart/form-data" id="feedback-form">
+                <div class="feedback-form__form-group">
+                    <input type="text" class="feedback-form__form-control" id="name" placeholder="Иванов Иван Иванович">
+                    <span class="feedback-form__help-txt">Напишите. Это очень важно для нас.</span>
+                </div>
+                <div class="feedback-form__form-group">
+                    <input type="text" class="feedback-form__form-control phone" id="phone" placeholder="+7 (___) ____-__-__">
+                    <span class="feedback-form__help-txt">Позвоним только один раз. Но это не точно.</span>
+                </div>
+                <div class="feedback-form__form-group">
+                    <input type="text" class="feedback-form__form-control" id="mail" placeholder="Ваш E-mail">
+                    <span class="feedback-form__help-txt">Обещаем, спамить не будем.</span>
+                </div>
+                <div class="feedback-form__btn-container">
+                    <button type="submit" class="btn btn-default"><span>Отправить</span></button>
+                </div>
+            </form>
+            <div class="feedback-form__pravicy-policy">
+                Нажимая на кнопку “Отправить”, вы соглашаетесь c
+                <a href="#">политикой обработки перснальных данных</a>
+            </div>
+        </div>
+    </section>
 
     <nav>
         <ul class="nav__items">
@@ -236,7 +250,6 @@
             </li>
             <li class="nav__item">
                 <a href="#" data-anchor-target="#location">Контакты</a>
-                <span class="line"></span>
             </li>
         </ul>
     </nav>
@@ -270,13 +283,16 @@
                 <h1 class="index-banner__title">Оптовая и розничная  продажа автошин и дисков</h1>
                 <p class="index-banner__subtitle">Грузовых, легковых, легкогрузовых, сельхозшин и шин для спецтехники, продажа автошин и другой продукции с госрезерва, а также комплексные поставки промышленной химии, каучуков, техуглерода.</p>
                 <div class="btn-container">
-                    <a href="" class="btn-default">Подробнее</a>
-                    <a href="" class="btn-default-emty dark-castom">Коммерческое предложение</a>
+                    <a href="" class="btn-default" data-card-id="about-company"><span>Подробнее</span></a>
+                    <a href="" class="btn-default-lite"><span>Коммерческое предложение</span></a>
                 </div>
             </div>
             <div class="clearfix"></div>
             <div class="index-banner__scroll-icon">
-                <img src="/images/scroll-mouse.png" alt="Скрольте вниз">
+                <img class="scroll-body" src="/images/scroll-mouse.png" alt="Скрольте вниз">
+                <div class="scroll-arrow-body">
+                    <img class="scroll-arrow" src="/images/scroll-arrow.png" alt="Скрольте вниз">
+                </div>
                 <p>Скрольте вниз</p>
             </div>
         </div>
@@ -295,7 +311,7 @@
                 <li class="tires-and-wheels__item front">
                     <h3 class="tires-and-wheels__item-title">Шины и диски для автобусов</h3>
                     <p class="tires-and-wheels__item-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах.</p>
-                    <a href="" class="btn-default-emty lite-castom">Скачать прайс</a>
+                    <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
                 </li>
                 <li class="tires-and-wheels__item tractor">
                     <span class="tires-and-wheels__item-mark">для сельхоз техники</span>
@@ -338,7 +354,7 @@
                                 <li>Специфицированные</li>
                             </ul>
                             <div class="material__button">
-                                <button class="btn-default-emty lite-castom" data-card-id="rubbers">Подробнее</button>
+                                <button class="btn-default-emty" data-card-id="rubbers">Подробнее</button>
                             </div>
                         </div>
                     </li>
@@ -348,7 +364,7 @@
                             <h3 class="material__title">Технический  углерод</h3>
                             <p class="material__description">Без использования технического углерода шина легкового автомобиля сможет проехать не более 100 км. Шина в составе которой присутствует технический углерод может обогнуть земной шар более 5 раз!</p>
                             <div class="material__button">
-                                <button class="btn-default-emty lite-castom" data-card-id="carbon">Подробнее</button>
+                                <button class="btn-default-emty" data-card-id="carbon">Подробнее</button>
                             </div>
                         </div>
                     </li>
@@ -358,7 +374,7 @@
                             <h3 class="material__title">Химическое  сырье</h3>
                             <p class="material__description">Мы предлагаем поставки натуральных и синтетических каучуков и латексов, химикатов-добавок, мягчителей и пластификаторов, технического углерода зарубежного производства.</p>
                             <div class="material__button">
-                                <button class="btn-default-emty lite-castom" data-card-id="chemistry">Подробнее</button>
+                                <button class="btn-default-emty" data-card-id="chemistry">Подробнее</button>
                             </div>
                         </div>
                     </li>
@@ -380,9 +396,11 @@
                 <p class="consultation__phone">+7 (961) 461-41-45</p>
             </div>
             <div class="consultation__button-container">
-                <button type="button" name="button" class="btn-default-emty lite-castom">
-                    <img src="/images/btn-icon-phone.png" alt="">
-                    Обратная связь
+                <button type="button" name="button" class="btn-default-emty open-feedback-modal">
+                    <span>
+                        <img src="/images/btn-icon-phone.png" alt="">
+                        Обратная связь
+                    </span>
                 </button>
             </div>
         </div>
@@ -424,7 +442,9 @@
                 </div>
             </div>
             <a href="" class="btn-default btn__map-load">
-                <img src="/images/btn-map-icon.png" alt="Показать подробную карту">
+                <span>
+                    <img src="/images/btn-map-icon.png" alt="Показать подробную карту">
+                </span>
             </a>
         </div>
     </section>
@@ -435,19 +455,41 @@
             </a>
             <div class="footer-links">
                 <div class="footer-links__section">
-                    <a href="#" data-card-id="about-company">О компании</a>
-                    <a href="#" data-anchor-target="#tires-and-wheels">Шины и диски</a>
+                    <div class="footer-links__titel">О компании</div>
+                    <a href="#" class="footer-links__point" data-card-id="about-company">Подробно</a>
+                    <a href="#" class="footer-links__point">Коммерческое предложение</a>
+                    <a href="#" data-anchor-target="#tires-and-wheels" class="footer-links__titel">Шины и диски</a>
+                    <a href="#" data-anchor-target="#location" class="footer-links__titel">Контакты</a>
                 </div>
                 <div class="footer-links__section">
-                    <a href="#" data-anchor-target="#material">Сырье для производства</a>
-                    <a href="#" data-anchor-target="#location">Контакты</a>
+                    <a href="#" class="footer-links__point open-feedback-modal">Обратная связь</a>
+                    <div class="footer-links__titel">Сырье для производства</div>
+                    <a href="#" class="footer-links__point" data-card-id="rubbers">Каучуки</a>
+                    <a href="#" class="footer-links__point" data-card-id="carbon">Технический углерод</a>
+                    <a href="#" class="footer-links__point" data-card-id="chemistry">Химическое сырье</a>
+                </div>
+                <div class="footer-links__section">
+                    <div class="footer-links__titel">Прайсы на шины и диски</div>
+                    <a href="#" class="footer-links__point">Для автобусов</a>
+                    <a href="#" class="footer-links__point">Для грузовиков</a>
+                    <a href="#" class="footer-links__point">Для сельхоз техники</a>
+                    <a href="#" class="footer-links__point">Для спец техники</a>
                 </div>
             </div>
         </div>
     </footer>
-
+    <section class="creator">
+        <div class="container">
+            <div class="creator__container">
+                <span class="creator__description">Дизайн и разработка сайта</span>
+                <img class="creator__logo" src="/images/creator-logo.png" alt="">
+            </div>
+        </div>
+    </section>
     <!-- CONNECTING JS SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
     <script async src="/js/main.js"></script>
 </body>
 </html>
