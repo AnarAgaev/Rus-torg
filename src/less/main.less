@@ -10,8 +10,16 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
+        &::before,
+        &::after {
+            display: none;
+        }
         .nav__item {
             position: relative;
+            &::before,
+            &::after {
+                display: none;
+            }
             &:last-child a {
                 margin-right: 0;
             }
@@ -36,6 +44,11 @@ nav {
                     right: 90px;
                 }
             }
+        }
+        .line.compress {
+            transform: translateX(-6px);
+            width: 6px;
+            right: 4px;
         }
         .line {
             width: 82px;

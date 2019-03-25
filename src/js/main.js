@@ -2,6 +2,35 @@
 var eventTimer = true
 
 $( document ).ready(function() {
+
+    // MOUSE ARRIVE OR LIEAVE ON ANCKHOR IN MAIN NAVIGATION
+    $('.nav__item a').on('mouseenter', function() {
+       let parentBlock = $(this).parent()
+       let parentBlockNumber = parentBlock.index()
+       let parentBlockBefore
+
+       if (parentBlockNumber != 0) {
+            parentBlockBefore = parentBlockNumber - 1
+       }
+
+       if (parentBlockBefore >= 0) {
+         $('.nav__item').eq(parentBlockBefore).find('.line').addClass('compress')
+       }
+    })
+    $('.nav__item a').on('mouseleave', function() {
+       let parentBlock = $(this).parent()
+       let parentBlockNumber = parentBlock.index()
+       let parentBlockBefore
+
+       if (parentBlockNumber != 0) {
+            parentBlockBefore = parentBlockNumber - 1
+       }
+
+       if (parentBlockBefore >= 0) {
+         $('.nav__item').eq(parentBlockBefore).find('.line').removeClass('compress')
+       }
+    })
+
     // OPEN FEEDBACK MODAL
     $('.open-feedback-modal').on('click', function(event) {
         event.preventDefault()
@@ -50,8 +79,8 @@ $( document ).ready(function() {
         event.preventDefault()
         let anchorTargetId = $(this).data('anchor-target')
 
-        $('.nav__item a').not($(this)).removeClass('active')
-        $(this).addClass('active')
+        // $('.nav__item a').not($(this)).removeClass('active')
+        // $(this).addClass('active')
         if ( $(anchorTargetId).length != 0 ) {
     	    $('html, body').animate({ scrollTop: $(anchorTargetId).offset().top }, 500);
         }

@@ -175,29 +175,23 @@ body.modal-open {
     margin-left: 10px;
     margin-top: 4px;
     animation: arrow-moove .5s infinite linear alternate;
-    &::before {
-        content: '';
-        display: block;
-        width: 7px;
-        height: 2px;
-        background-color: rgb(238, 77, 67);
-        transform: rotate(40deg);
-        position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -3px;
-    }
+    &::before,
     &::after {
         content: '';
         display: block;
-        width: 10px;
+        width: 8px;
         height: 2px;
         background-color: rgb(238, 77, 67);
-        transform: rotate(-30deg);
         position: absolute;
         right: 0;
         top: 50%;
-        margin-top: 1px;
+
+    }
+    &::before {
+        transform: translateY(-3px) rotate(40deg);
+    }
+    &::after {
+        transform: translateY(1px) rotate(-40deg);
     }
 }
 @keyframes arrow-moove {
