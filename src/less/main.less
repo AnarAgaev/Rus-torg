@@ -161,19 +161,19 @@ header {
         position: relative;
         img.scroll-body {
             display: block;
-            width: 24px;
+            width: 16px;
             height: auto;
             margin: 0 auto;
         }
         img.scroll-arrow {
             display: block;
-            width: 100%;
+            width: auto;
             height: auto;
         }
         .scroll-arrow-body {
             animation: slide-mouse .8s infinite linear alternate;
-            width: 26px;
-            top: 24px;
+            // width: 26px;
+            top: 17px;
             left: 50%;
             position: absolute;
 
@@ -187,7 +187,7 @@ header {
     }
 }
 @keyframes slide-mouse {
-    from { transform: translate(-50%, -2px); }
+    from { transform: translate(-50%, -1px); }
     50%  { transform: translate(-50%, 0); }
     to   { transform: translate(-50%, 2px);  }
 }
