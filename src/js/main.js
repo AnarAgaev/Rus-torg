@@ -123,7 +123,6 @@ function hideMaterialCard() {
 function slideMaterialCard(tooSide) {
     let activeCard = $('.material-slider__container.active').index()
     let cards = $('.material-slider__container:not(.single-card)')
-    //let numCards = $('.material-slider__container:not(.single-card)').length
     let numCards = 3
 
     // Changed number of active card
@@ -170,11 +169,10 @@ function materialSliding(slideTo) {
     let positionLeft = sliderContainer.position().left
     let firstElement = $('.material__item:first')
     let lastElement = $('.material__item:last')
-
+    let activeElement = $('.material__item_active')
+    
     switch (slideTo) {
         case 'left':
-            // Manipulation with DOM elements
-            let activeElement = $('.material__item_active')
             activeElement.clone().prependTo(sliderContainer)
             lastElement.remove() // Deleted last element
             $('.material__item_active').addClass('material__item_passive').removeClass('material__item_active')
@@ -182,42 +180,17 @@ function materialSliding(slideTo) {
             positionLeft -= STEP_WIDTH
             sliderContainer.css('left', positionLeft + 'px')
             positionLeft += STEP_WIDTH
-            sliderContainer.animate({left: positionLeft + 'px'}, 700, 'easeOutQuart')
-
-            // positionLeft += STEP_WIDTH
-            // sliderContainer.animate(
-            //     {left: positionLeft + 'px'},
-            //     500,
-            //     'expoout',
-            //     function(){
-            //         // Manipulation with DOM elements
-            //         let activeElement = $('.material__item_active')
-            //         activeElement.addClass('material__item_passive').removeClass('material__item_active')
-            //         $('.material__item:last').prependTo(sliderContainer) // Cloning last element to the front
-            //         lastElement.remove() // Deleted last element
-            //         let numElements = $('.material__item').length - 2 // Number of the last but one element
-            //         $('.material__item:eq(' + numElements + ')').clone().prependTo(sliderContainer) // Cloning last but one element to the front
-            //         sliderContainer.css('left', '-' + STEP_WIDTH + 'px') // Moove slider container to the start position
-            //         $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
-            //     })
-
+            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart')
             break
         case 'right':
+            activeElement.clone().appendTo(sliderContainer)
+            firstElement.remove() // Deleted last element
+            $('.material__item_active').addClass('material__item_passive').removeClass('material__item_active')
+            $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
+            positionLeft += STEP_WIDTH
+            sliderContainer.css('left', positionLeft + 'px')
             positionLeft -= STEP_WIDTH
-            sliderContainer.animate(
-                {left: positionLeft + 'px'},
-                500,
-                'expoout',
-                function(){
-                    // Manipulation with DOM elements
-                    let activeElement = $('.material__item_active')
-                    activeElement.addClass('material__item_passive').removeClass('material__item_active')
-                    firstElement.remove() // Deleted first element
-                    $('.material__item:eq(1)').clone().appendTo(sliderContainer) // Cloning last but one element to the front
-                    sliderContainer.css('left', '-' + STEP_WIDTH + 'px')
-                    $('.material__item').removeClass('material__item_active')
-                    $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
-                })
+            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart')
             break
     }
 }
@@ -228,7 +201,7 @@ $('.material__arr_left').on('click', function(){
         eventTimer = false
         setTimeout(function() {
             eventTimer = true
-        }, 1000)
+        }, 800)
         materialSliding('left')
     }
 })
@@ -237,7 +210,7 @@ $('.material__arr_right').on('click', function(){
         eventTimer = false
         setTimeout(function() {
             eventTimer = true
-        }, 1000)
+        }, 800)
         materialSliding('right')
     }
 })

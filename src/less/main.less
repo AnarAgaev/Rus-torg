@@ -336,12 +336,13 @@ header {
     }
     &-background {
         position: absolute;
-        left: 95px;
+        left: 110px;
         bottom: 3px;
     }
     &-content {
         left: 50%;
         position: absolute;
+        margin-left: 57px;
     }
     &-content__title {
         color: #000000;
@@ -362,7 +363,6 @@ header {
         line-height: 21px;
         position: relative;
         padding-left: 10px;
-        margin-left: 35px;
         &::before {
             content: '';
             display: block;
@@ -375,9 +375,6 @@ header {
             top: 50%;
             transform: translateY(-50%);
         }
-    }
-    .base-anchor {
-        margin-left: 35px;
     }
 }
 // Section material
@@ -429,6 +426,7 @@ header {
                 background-color: #babcbe;
                 padding: 22px 30px 24px;
                 position: relative;
+                transition: all .7s cubic-bezier(0.165, 0.84, 0.44, 1);
                 &::before,
                 &::after {
                     display: none;
@@ -460,7 +458,7 @@ header {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: all .7s cubic-bezier(0.165, 0.84, 0.44, 1);
                 &::before,
                 &::after {
                     display: none;
@@ -587,7 +585,7 @@ header {
         top: calc(50% + 87px);
         left: 50%;
         transform: translateY(-50%);
-        z-index: 99;
+        z-index: 10;
         cursor: pointer;
         transition: all .2s;
         display: flex;
@@ -665,10 +663,10 @@ header {
     position: relative;
     // background-color: #eeeff1;
     background-color: rgb(242, 242, 242);
-    height: 637px;
+    height: 1329px;
     .img-map-wrap {
-        width: 1931px;
-        height: 638px;
+        width: 4000px;
+        height: 1329px;
         position: absolute;
         top: 0;
         left: 50%;
@@ -795,10 +793,13 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 100%;
     background-color: rgba(0,0,0,0);
     position: fixed;
     transition: background-color .3s;
     z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
     &.visible {
         top: 0;
         background-color: rgba(0,0,0,.6);
@@ -811,7 +812,8 @@ header {
         padding-bottom: 90px;
         background-color: #eeeff1;
         position: absolute;
-        top: 100px;
+        top: 70px;
+        margin-bottom: 70px;
         left: 50%;
         transform: translate(-50%, -5%);
         border-bottom: 5px solid #f76d65;

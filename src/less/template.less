@@ -155,7 +155,6 @@ body.modal-open {
     background-color: #e40f00;
 }
 
-
 // Anchors
 .base-anchor {
     color: #ee4d43;
@@ -204,8 +203,67 @@ body.modal-open {
 }
 .anchor-target {
     position: absolute;
-    top: -55x;
+    top: -55px;
     display: block;
+}
+.anchor-arrow-right {
+    display: inline-block;
+    position: relative;
+    height: 14px;
+    width: 30px;
+    margin-top: 4px;
+    margin-left: 9px;
+    &::before,
+    &::after {
+        display: none;
+    }
+    img:nth-child(1) {
+        animation: move_first 1.5s linear infinite;
+    }
+    img:nth-child(2) {
+        left: 10px;
+        animation: move_second 1.5s linear infinite;
+    }
+    img:nth-child(3) {
+        left: 20px;
+        animation: move_fird 1.5s linear infinite;
+    }
+    img {
+        display: block;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+@keyframes move_first {
+    16%  {opacity: 1;}
+    33%  {opacity: 1;}
+    49%  {opacity: 1;}
+    66%  {opacity: 0;}
+    83%  {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes move_second {
+    16%  {opacity: 0;}
+    33%  {opacity: 1;}
+    49%  {opacity: 1;}
+    66%  {opacity: 1;}
+    83%  {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes move_fird {
+    16%  {opacity: 0;}
+    33%  {opacity: 0;}
+    49%  {opacity: 1;}
+    66%  {opacity: 1;}
+    83%  {opacity: 1;}
+    100% {opacity: 0;}
 }
 
 /* placeholder styles for input and textarea */
