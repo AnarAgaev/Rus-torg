@@ -110,6 +110,12 @@ $( document ).ready(function() {
              closeFeedbackModal()
         }
 	})
+
+    // SHOW GOOGLE MAP
+    $('.btn__map-load').on('click', function(event) {
+        event.preventDefault()
+        $('.location__map-container').addClass('show')
+    })
 })
 
 // FUNCTION FOR HIDE MATERIAL CARD

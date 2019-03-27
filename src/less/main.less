@@ -381,6 +381,10 @@ header {
 .material {
     background-color: #eeeff1;
     position: relative;
+    .btn-default::before, 
+    .btn-default::after {
+        display: none;
+    } 
     &__items {
         display: flex;
         align-items: center;
@@ -393,6 +397,7 @@ header {
         &-wrap {
             position: relative;
             overflow: hidden;
+            height: 455px;
             &::before,
             &::after {
                 display: none;
@@ -422,11 +427,12 @@ header {
         }
         &_passive {
             .material__item-body {
-                width: 315px;
+                width: 306px;
+                height: 364px;
                 background-color: #babcbe;
-                padding: 22px 30px 24px;
+                padding: 25px 30px 24px;
                 position: relative;
-                transition: all .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: width .6s cubic-bezier(0.165, 0.84, 0.44, 1);
                 &::before,
                 &::after {
                     display: none;
@@ -452,17 +458,18 @@ header {
                 width: 380px;
                 box-shadow: 3px 3px 8px rgba(238, 77, 67, 0.25);
                 background-color: #ee4d43;
-                padding: 30px;
-                height: 460px;
+                padding: 30px 30px 29px;
+                height: 454px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: all .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: width .6s cubic-bezier(0.165, 0.84, 0.44, 1);
                 &::before,
                 &::after {
                     display: none;
                 }
+
             }
             .material__title::after {
                 content: '';
@@ -490,35 +497,48 @@ header {
         display: block;
         position: relative;
         margin: 0 auto;
-        padding-bottom: 19px;
-        margin-bottom: 15px;
+        padding-bottom: 28px;
+        margin-bottom: 21px;
 
     }
     &__item_passive h3 {
-        font-size: 35px;
+        font-size: 34px;
         line-height: 32px;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        transition: all 0s;
+    }    
+    &__item_passive .material__button {
+        margin-top: 19px;
+    }    
+    &__item_passive .material__description-list {
+        margin-top: 0;
     }
     &__item_active h3 {
         font-size: 42px;
         line-height: 38px;
+        transition: all 0s;
     }
     &__icon {
         display: block;
         margin: 0 auto 17px;
-        width: 81px;
-        height: 69px;
-        transition: all .3s;
+        transition: all .8s;
+        &::before,
+        &::after {
+            display:none;
+        }
     }
     &__item_passive .material__icon {
-        width: 67px;
-        height: 61px;
+        width: auto;
+        height: 56px;
+        margin-bottom: 12px;
     }
     &__description {
         text-align: center;
         color: #ffffff;
         font-family: "Open Sans", sans-serif;
         font-weight: 300;
-        transition: all .3s;
+        transition: all .8s;
     }
     &__item_active &__description {
         font-size: 15px;
@@ -558,9 +578,9 @@ header {
         }
     }
     &__item_active .material__description-list li {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.47;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.4;
     }
     &__button {
         display: flex;
@@ -577,6 +597,7 @@ header {
         padding: 0 31px 0 31px;
         height: 47px;
         line-height: 45px;
+        background-color: #888888;
     }
     &__arr {
         width: 30px;
@@ -662,15 +683,53 @@ header {
 .location {
     position: relative;
     background-color: rgb(242, 242, 242);
-    height: 1329px;
+    height: 800px;
+    overflow: hidden;
     .img-map-wrap {
         width: 4000px;
         height: 1329px;
         position: absolute;
-        top: 0;
+        top: -250px;
         left: 50%;
         transform: translateX(-50%);
         overflow: hidden;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &__map-container {
+        overflow: hidden;
+        width: 4000px;
+        height: 800px;
+        max-height: 0;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &__map-container.show {
+        transform: translate(-50%, 0);
+        z-index: 50;
+        max-height: 800px;
+    }
+    &__map-container.show #map {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        transform: translateY(-20%);
+        opacity: 0;
+        position: absolute;
+        transition: all .7s ease-out;
         &::before,
         &::after {
             display: none;
@@ -729,9 +788,7 @@ header {
         position: absolute;
         right:0;
         bottom: 50px;
-        img {
-            margin-top: 8px;
-        }
+        img {margin-top: 8px;}
     }
     &-baloon {
         position: absolute;
@@ -753,12 +810,8 @@ header {
         height: 34px;
         background: url(../images/car-left.png) no-repeat 0 0;
     }
-    &__car-left.car1 {
-        animation: location-left-car-moove 8s infinite linear;
-    }
-    &__car-left.car2 {
-        animation: location-left-car-moove 8s infinite 4s linear;
-    }
+    &__car-left.car1 {animation: location-left-car-moove 8s infinite linear;}
+    &__car-left.car2 {animation: location-left-car-moove 8s infinite 4s linear;}
     &__car-right {
         position: absolute;
         display: block;
@@ -770,15 +823,9 @@ header {
         height: 44px;
         background: url(../images/car-right.png) no-repeat 0 0;
     }
-    &__car-right.car1 {
-        animation: location-right-car-moove 12s infinite linear;
-    }
-    &__car-right.car2 {
-        animation: location-right-car-moove 12s infinite 3s linear;
-    }
-    &__car-right.car3 {
-        animation: location-right-car-moove 12s infinite 8s linear;
-    }
+    &__car-right.car1 {animation: location-right-car-moove 12s infinite linear;}
+    &__car-right.car2 {animation: location-right-car-moove 12s infinite 3s linear;}
+    &__car-right.car3 {animation: location-right-car-moove 12s infinite 8s linear;}
 }
 @keyframes location-left-car-moove {
     from { top: 469px; margin-left: -310px; transform: scale(1, 1);  opacity: 1; }
@@ -802,9 +849,6 @@ header {
     99%  { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
     to   { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 0;}
 }
-
-
-
 @keyframes location-baloon-moove { 
     from { transform: translateY(-2px); }
     50%  { transform: translateY(0px); }
