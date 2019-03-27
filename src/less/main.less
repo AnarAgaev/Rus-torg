@@ -661,7 +661,6 @@ header {
 // Section location
 .location {
     position: relative;
-    // background-color: #eeeff1;
     background-color: rgb(242, 242, 242);
     height: 1329px;
     .img-map-wrap {
@@ -676,6 +675,9 @@ header {
         &::after {
             display: none;
         }
+    }
+    .container {
+        height: 100%;
     }
     .contacts {
         width: 398px;
@@ -726,11 +728,87 @@ header {
         align-items: flex-start;
         position: absolute;
         right:0;
-        bottom: 0;
+        bottom: 50px;
         img {
             margin-top: 8px;
         }
     }
+    &-baloon {
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 570px;
+        margin-left: 407px;
+        left: 50%;
+        animation: location-baloon-moove 1s infinite linear alternate;
+    }
+    &__car-left {
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 469px;
+        left: 50%;
+        margin-left: -310px;
+        width: 40px;
+        height: 34px;
+        background: url(../images/car-left.png) no-repeat 0 0;
+    }
+    &__car-left.car1 {
+        animation: location-left-car-moove 8s infinite linear;
+    }
+    &__car-left.car2 {
+        animation: location-left-car-moove 8s infinite 4s linear;
+    }
+    &__car-right {
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: -27px;
+        left: 50%;
+        margin-left: 1510px;
+        width: 41px;
+        height: 44px;
+        background: url(../images/car-right.png) no-repeat 0 0;
+    }
+    &__car-right.car1 {
+        animation: location-right-car-moove 12s infinite linear;
+    }
+    &__car-right.car2 {
+        animation: location-right-car-moove 12s infinite 3s linear;
+    }
+    &__car-right.car3 {
+        animation: location-right-car-moove 12s infinite 8s linear;
+    }
+}
+@keyframes location-left-car-moove {
+    from { top: 469px; margin-left: -310px; transform: scale(1, 1);  opacity: 1; }
+    20%  { top: 537px; margin-left: -177px; transform: scale(1, 1);  opacity: 1; }
+    50%  { top: 641px; margin-left: 0;      transform: scale(1, 1);  opacity: 1; }
+    78%  { top: 712px; margin-left: 133px;  transform: scale(1, 1);  opacity: 1; }
+    81%  { top: 712px; margin-left: 133px;  transform: scale(1, 1);  opacity: 1; }
+    81.0001%  { top: 710px; margin-left: 137px;  transform: scale(-1, 1); opacity: 1; }
+    87%  { top: 710px; margin-left: 137px;  transform: scale(-1, 1); opacity: 1; }
+    96%  { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 1; }
+    98%  { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 1; }
+    to   { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 0;}
+}
+@keyframes location-right-car-moove {
+    from { top: -27px; margin-left: 1510px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    80%  { top: 732px; margin-left: 461px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    84%  { top: 732px; margin-left: 461px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    84.0001%  { top: 733px; margin-left: 457px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    90%  { top: 733px; margin-left: 457px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    94%  { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    99%  { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    to   { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 0;}
+}
+
+
+
+@keyframes location-baloon-moove { 
+    from { transform: translateY(-2px); }
+    50%  { transform: translateY(0px); }
+    to   { transform: translateY(3px);  }
 }
 // Footer
 .footer {
