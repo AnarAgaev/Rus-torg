@@ -175,28 +175,29 @@ function materialSliding(slideTo) {
     let positionLeft = sliderContainer.position().left
     let firstElement = $('.material__item:first')
     let lastElement = $('.material__item:last')
-    let activeElement = $('.material__item_active')
     
     switch (slideTo) {
         case 'left':
-            activeElement.clone().prependTo(sliderContainer)
-            lastElement.remove() // Deleted last element
             $('.material__item_active').addClass('material__item_passive').removeClass('material__item_active')
-            $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
-            positionLeft -= STEP_WIDTH
-            sliderContainer.css('left', positionLeft + 'px')
+            $('.material__item:eq(1)').removeClass('material__item_passive').addClass('material__item_active')
             positionLeft += STEP_WIDTH
-            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart')
+            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart', function(){
+                lastElement.remove()
+                $('.material__item:eq(2)').clone().prependTo(sliderContainer)
+                positionLeft -= STEP_WIDTH
+                sliderContainer.css('left', positionLeft + 'px')
+            })
             break
         case 'right':
-            activeElement.clone().appendTo(sliderContainer)
-            firstElement.remove() // Deleted last element
             $('.material__item_active').addClass('material__item_passive').removeClass('material__item_active')
-            $('.material__item:eq(2)').removeClass('material__item_passive').addClass('material__item_active')
-            positionLeft += STEP_WIDTH
-            sliderContainer.css('left', positionLeft + 'px')
+            $('.material__item:eq(3)').removeClass('material__item_passive').addClass('material__item_active')
             positionLeft -= STEP_WIDTH
-            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart')
+            sliderContainer.animate({left: positionLeft + 'px'}, 800, 'easeOutQuart', function() {
+                firstElement.remove()
+                $('.material__item:eq(1)').clone().appendTo(sliderContainer)
+                positionLeft += STEP_WIDTH
+                sliderContainer.css('left', positionLeft + 'px')
+            })
             break
     }
 }
