@@ -100,16 +100,16 @@ $( document ).ready(function() {
     })
 
     // HIDE POPUP CARD WHEN USER CLICKD OUTSIDE BLOCK
-	$(document).on('mouseup', function(event) {
-		let targetBlockMaterial = $('.material-slider__container')
-        let targetBlockFeedack = $('.feedback-form__container')
+	// $(document).on('mouseup', function(event) {
+	// 	let targetBlockMaterial = $('.material-slider__container')
+ //        let targetBlockFeedack = $('.feedback-form__container')
 
-        if (!targetBlockMaterial.is(event.target) && targetBlockMaterial.has(event.target).length === 0
-         && !targetBlockFeedack.is(event.target) && targetBlockFeedack.has(event.target).length === 0) {
-             hideMaterialCard()
-             closeFeedbackModal()
-        }
-	})
+ //        if (!targetBlockMaterial.is(event.target) && targetBlockMaterial.has(event.target).length === 0
+ //         && !targetBlockFeedack.is(event.target) && targetBlockFeedack.has(event.target).length === 0) {
+ //             hideMaterialCard()
+ //             closeFeedbackModal()
+ //        }
+	// })
 
     // SHOW GOOGLE MAP
     $('.btn__map-load').on('click', function(event) {
