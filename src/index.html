@@ -23,7 +23,7 @@
     <!-- Material slider -->
     <section class="material-slider">
         <div class="material-slider__container" id="rubbers">
-            <button type="button" class="material-slider__close">Закрыть</button>
+            <button type="button" class="material-slider__close"></button>
             <img src="/images/rubber.png" class="material-slider__back-img" alt="Натуральный каучук">
             <div class="material-slider__content">
                 <h3 class="material-slider__title">Сырье для производства шин, РТИ и лакокрасочной продукции</h3>
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="material-slider__container">
-            <button type="button" class="material-slider__close">Закрыть</button>
+            <button type="button" class="material-slider__close"></button>
             <img src="/images/synthetic-rubber.png" class="material-slider__back-img" alt="Натуральный каучук">
             <div class="material-slider__content">
                 <h3 class="material-slider__title">Сырье для производства шин, РТИ и лакокрасочной продукции</h3>
@@ -99,7 +99,7 @@
             </div>
         </div>
         <div class="material-slider__container">
-         <button type="button" class="material-slider__close">Закрыть</button>
+         <button type="button" class="material-slider__close"></button>
          <img src="/images/chemistry.png" class="material-slider__back-img" alt="Натуральный каучук">
          <div class="material-slider__content">
              <h3 class="material-slider__title">Сырье для производства шин, РТИ и лакокрасочной продукции</h3>
@@ -140,7 +140,7 @@
          </div>
         </div>
         <div class="material-slider__container" id="carbon">
-            <button type="button" class="material-slider__close">Закрыть</button>
+            <button type="button" class="material-slider__close"></button>
             <img src="/images/carbon.png" class="material-slider__back-img" alt="Технический углерод">
             <div class="material-slider__content">
                 <h3 class="material-slider__title">Сырье для производства шин, РТИ и лакокрасочной продукции</h3>
@@ -162,7 +162,7 @@
             </div>
         </div>
         <div class="material-slider__container" id="chemistry">
-         <button type="button" class="material-slider__close">Закрыть</button>
+         <button type="button" class="material-slider__close"></button>
          <img src="/images/chemistry.png" class="material-slider__back-img" alt="Промышленная химия">
          <div class="material-slider__content">
              <h3 class="material-slider__title">Сырье для производства шин, РТИ и лакокрасочной продукции</h3>
@@ -191,7 +191,7 @@
          </div>
         </div>
         <div class="material-slider__container single-card" id="about-company">
-            <button type="button" class="material-slider__close">Закрыть</button>
+            <button type="button" class="material-slider__close"></button>
             <img src="/images/about-company.png" class="material-slider__back-img" alt="Натуральный каучук">
             <div class="material-slider__content">
                 <h3 class="material-slider__title">О компании</h3>
@@ -308,28 +308,52 @@
     <section class="tires-and-wheels">
         <span class="anchor-target" id="tires-and-wheels"></span>
         <div class="container">
-            <ul class="tires-and-wheels__items">
-                <li class="tires-and-wheels__item track">
-                    <span class="tires-and-wheels__item-mark">для грузовиков</span>
-                    <img src="/images/track.png" alt="Для грузовиков">
-                </li>
-                <li class="tires-and-wheels__item bus">
+            <div class="tires-and-wheels__wrap">
+                <div class="tires-and-wheels__item" data-position-card="0">
+                    <span class="tires-and-wheels__item-title">для автобусов</span>
                     <img src="/images/bus.png" alt="Для автобусов">
-                </li>
-                <li class="tires-and-wheels__item front">
-                    <h3 class="tires-and-wheels__item-title">Шины и диски для автобусов</h3>
-                    <p class="tires-and-wheels__item-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах.</p>
-                    <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
-                </li>
-                <li class="tires-and-wheels__item tractor">
-                    <span class="tires-and-wheels__item-mark">для сельхоз техники</span>
+                    <div class="tires-and-wheels__download">
+                        <div class="tires-and-wheels__download-wrap">
+                            <h3 class="tires-and-wheels__download-title">Шины и диски для автобусов</h3>
+                            <p class="tires-and-wheels__download-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в алеко-далеко за словесными горамирыбные тексты.</p>
+                            <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tires-and-wheels__item" data-position-card="1">
+                    <span class="tires-and-wheels__item-title">для грузовиков</span>
+                    <img src="/images/track.png" alt="Для грузовиков">
+                    <div class="tires-and-wheels__download">
+                        <div class="tires-and-wheels__download-wrap">
+                            <h3 class="tires-and-wheels__download-title">Шины и диски для грузовиков</h3>
+                            <p class="tires-and-wheels__download-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в алеко-далеко за словесными горамирыбные тексты.</p>
+                            <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tires-and-wheels__item" data-position-card="2">
+                    <span class="tires-and-wheels__item-title">для сельхоз техники</span>
                     <img src="/images/tractor.png" alt="Для сельхоз техники">
-                </li>
-                <li class="tires-and-wheels__item combine">
-                    <span class="tires-and-wheels__item-mark">для спец. техники</span>
+                    <div class="tires-and-wheels__download">
+                        <div class="tires-and-wheels__download-wrap">
+                            <h3 class="tires-and-wheels__download-title">Шины и диски для сельхоз техники</h3>
+                            <p class="tires-and-wheels__download-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в алеко-далеко за словесными горамирыбные тексты.</p>
+                            <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tires-and-wheels__item" data-position-card="3">
+                    <span class="tires-and-wheels__item-title">для спец. техники</span>
                     <img src="/images/combine.png" alt="Для спец. техники">
-                </li>
-            </ul>
+                    <div class="tires-and-wheels__download">
+                        <div class="tires-and-wheels__download-wrap">
+                            <h3 class="tires-and-wheels__download-title">Шины и диски для спец. техники</h3>
+                            <p class="tires-and-wheels__download-subtitle">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в алеко-далеко за словесными горамирыбные тексты.</p>
+                            <a href="" class="btn-default-emty"><span>Скачать прайс</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="posts">
