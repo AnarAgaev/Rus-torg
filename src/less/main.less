@@ -702,25 +702,25 @@ header {
 .location {
     position: relative;
     background-color: rgb(242, 242, 242);
-    height: 800px;
+    height: 638px;
     overflow: hidden;
+    *::before,
+    *::after {
+        display: none;
+    }
     .img-map-wrap {
-        width: 4000px;
-        height: 1329px;
+        width: 1920px;
+        height: 638px;
         position: absolute;
-        top: -250px;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
         overflow: hidden;
-        &::before,
-        &::after {
-            display: none;
-        }
     }
     &__map-container {
         overflow: hidden;
-        width: 4000px;
-        height: 800px;
+        width: 1920px;
+        height: 638px;
         max-height: 0;
         top: 0;
         left: 50%;
@@ -728,10 +728,6 @@ header {
         overflow: hidden;
         position: absolute;
         z-index: -1;
-        &::before,
-        &::after {
-            display: none;
-        }
     }
     &__map-container.show {
         transform: translate(-50%, 0);
@@ -749,10 +745,6 @@ header {
         opacity: 0;
         position: absolute;
         transition: all .7s ease-out;
-        &::before,
-        &::after {
-            display: none;
-        }
     }
     .container {
         height: 100%;
@@ -762,8 +754,9 @@ header {
         height: 479px;
         box-shadow: 3px 3px 8px rgba(173, 173, 173, 0.35);
         background-color: #ffffff;
-        margin-top: 75px;
-        margin-left: 10px;
+        top: 75px;
+        left: 19px;
+        position: relative;
         padding: 30px 38px 0;
         text-align: left;
         h3 {
@@ -813,8 +806,8 @@ header {
         position: absolute;
         display: block;
         z-index: 10;
-        top: 570px;
-        margin-left: 407px;
+        top: 202px;
+        margin-left: 174px;
         left: 50%;
         animation: location-baloon-moove 1s infinite linear alternate;
     }
@@ -822,9 +815,9 @@ header {
         position: absolute;
         display: block;
         z-index: 10;
-        top: 469px;
         left: 50%;
-        margin-left: -310px;
+        top: 178px; 
+        margin-left: -231px;
         width: 40px;
         height: 34px;
         background: url(../images/car-left.png) no-repeat 0 0;
@@ -835,9 +828,9 @@ header {
         position: absolute;
         display: block;
         z-index: 10;
-        top: -27px;
+        top: -29px;
         left: 50%;
-        margin-left: 1510px;
+        margin-left: 719px;
         width: 41px;
         height: 44px;
         background: url(../images/car-right.png) no-repeat 0 0;
@@ -847,26 +840,26 @@ header {
     &__car-right.car3 {animation: location-right-car-moove 12s infinite 8s linear;}
 }
 @keyframes location-left-car-moove {
-    from { top: 469px; margin-left: -310px; transform: scale(1, 1);  opacity: 1; }
-    20%  { top: 537px; margin-left: -177px; transform: scale(1, 1);  opacity: 1; }
-    50%  { top: 641px; margin-left: 0;      transform: scale(1, 1);  opacity: 1; }
-    78%  { top: 712px; margin-left: 133px;  transform: scale(1, 1);  opacity: 1; }
-    81%  { top: 712px; margin-left: 133px;  transform: scale(1, 1);  opacity: 1; }
-    81.0001%  { top: 710px; margin-left: 137px;  transform: scale(-1, 1); opacity: 1; }
-    87%  { top: 710px; margin-left: 137px;  transform: scale(-1, 1); opacity: 1; }
-    96%  { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 1; }
-    98%  { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 1; }
-    to   { top: 688px; margin-left: 170px;  transform: scale(-1, 1); opacity: 0;}
+    from { top: 178px; margin-left: -231px; transform: scale(1, 1);  opacity: 1; }
+    35%  { top: 244px; margin-left: -103px; transform: scale(1, 1);  opacity: 1; }
+    50%  { top: 271px; margin-left: -56px;   transform: scale(1, 1);  opacity: 1; }
+    78%  { top: 333px; margin-left: 54px;  transform: scale(1, 1);  opacity: 1; }
+    81%  { top: 333px; margin-left: 54px;  transform: scale(1, 1);  opacity: 1; }
+    81.0001%  { top: 332px; margin-left: 59px;  transform: scale(-1, 1); opacity: 1; }
+    87%  { top: 332px; margin-left: 59px;  transform: scale(-1, 1); opacity: 1; }
+    96%  { top: 321px; margin-left: 73px;  transform: scale(-1, 1); opacity: 1; }
+    98%  { top: 321px; margin-left: 73px;  transform: scale(-1, 1); opacity: 1; }
+    to   { top: 321px; margin-left: 73px;  transform: scale(-1, 1); opacity: 0;}
 }
 @keyframes location-right-car-moove {
-    from { top: -27px; margin-left: 1510px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
-    80%  { top: 732px; margin-left: 461px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
-    84%  { top: 732px; margin-left: 461px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
-    84.0001%  { top: 733px; margin-left: 457px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
-    90%  { top: 733px; margin-left: 457px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
-    94%  { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
-    99%  { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
-    to   { top: 700px; margin-left: 397px; transform: scale(-1, 1) rotate(11deg); opacity: 0;}
+    from { top: -29px; margin-left: 719px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    80%  { top: 339px; margin-left: 211px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    84%  { top: 339px; margin-left: 211px; transform: scale(1, 1) rotate(0deg); opacity: 1;}
+    84.0001%  { top: 340px; margin-left: 208px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    90%  { top: 340px; margin-left: 208px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    94%  { top: 326px; margin-left: 182px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    99%  { top: 326px; margin-left: 182px; transform: scale(-1, 1) rotate(11deg); opacity: 1;}
+    to   { top: 326px; margin-left: 182px; transform: scale(-1, 1) rotate(11deg); opacity: 0;}
 }
 @keyframes location-baloon-moove { 
     from { transform: translateY(-2px); }
