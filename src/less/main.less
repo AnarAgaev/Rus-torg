@@ -704,10 +704,6 @@ header {
     background-color: rgb(242, 242, 242);
     height: 638px;
     overflow: hidden;
-    *::before,
-    *::after {
-        display: none;
-    }
     .img-map-wrap {
         width: 1920px;
         height: 638px;
@@ -719,7 +715,7 @@ header {
     }
     &__map-container {
         overflow: hidden;
-        width: 1920px;
+        width: 100%;
         height: 638px;
         max-height: 0;
         top: 0;
@@ -745,6 +741,9 @@ header {
         opacity: 0;
         position: absolute;
         transition: all .7s ease-out;
+        iframe {
+          width: 100%;  
+        }
     }
     .container {
         height: 100%;
