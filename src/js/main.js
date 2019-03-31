@@ -2,6 +2,68 @@
 var eventTimer = true
 
 $( document ).ready(function() {
+    // VALIDATION AND SEND FORM FEEDBACK
+    $('#feedback-form').on("submit", function(event){
+        event.preventDefault()
+
+        let formValid  = true
+        let nameInput  = $('#name')
+        let phoneInput = $('#phone')
+        let mailInput  = $('#mail')
+        let validMail, validPhone
+        let regularMail = /.+@.+\..+/i // check only the presence of @ and points
+        let regularPhone = /^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$/
+
+        // Clean error messages
+        $('.feedback-form__form-group').removeClass('has-error')
+        $('.feedback-form__form-control').on('keyup', function() {
+            $(this).parent('.feedback-form__form-group').removeClass('has-error')
+        })
+
+        // Validation email
+        validMail = regularMail.test( $.trim(mailInput.val()) )
+        if(mailInput.val() == '' || !validMail) {
+            mailInput
+                .focus()
+                .parent('.feedback-form__form-group').addClass('has-error')
+            formValid = false
+        }
+
+        // Validation phone
+        validPhone = regularPhone.test( $.trim(phoneInput.val()) )
+        if(phoneInput.val() == '' || !validPhone) {
+            phoneInput
+                .focus()
+                .parent('.feedback-form__form-group').addClass('has-error')
+            formValid = false
+        }
+
+        // Validation name
+        if(nameInput.val() == '') {
+            nameInput
+                .focus()
+                .parent('.feedback-form__form-group').addClass('has-error')
+            formValid = false
+        }
+
+        if(formValid){
+            $.post(
+                "/send-feedback.php",
+                {   
+                    name   :nameInput.val(),
+                    phone  :phoneInput.val(),
+                    email  :mailInput.val()
+                },
+                function(data){
+                    if(data){
+                        alert('Сообщение отправлено. Менеджер свяжется с Вами в ближайшее время.')
+                    }
+                    else alert('Сообщение не отправлено. Повторите попытку немного позже.')
+                }
+            )
+        }
+    })
+
 
     // SCROLLIN ON TIRES AND WHELLS SECTION WHEN USER CLICK ON ANY CARD
     $(document).on('click', '.tires-and-wheels__item:not([data-position-card="1"])', function(event){
